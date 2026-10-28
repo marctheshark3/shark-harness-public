@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#eeede7">
+  <title>Interaction lab — Shark Harness</title>
+  <link rel="stylesheet" href="/styles.css">
+  <script src="/app.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#display">Skip to the simulated display</a>
+  <div class="page">
+    <header class="site-header">
+      <a class="brand" href="/" aria-label="Shark Harness simulator home">
+        <span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+        <span>SHARK<br>HARNESS</span>
+      </a>
+      <div class="header-title"><span>INTERACTION LAB</span><span>H / 02</span></div>
+      <span class="synthetic-badge"><span aria-hidden="true"></span>SYNTHETIC DATA</span>
+    </header>
+
+    <main>
+      <section class="intro" aria-labelledby="page-title">
+        <div><p class="eyebrow">466 × 466 / A ROUND LITTLE INSTRUMENT</p><h1 id="page-title">Touch. Turn. Talk.</h1></div>
+        <p class="intro-copy">Explore the device interface, one interaction at a time. Everything here is simulated. Your microphone, device, and T3 sessions stay out of it.</p>
+      </section>
+
+      <div class="lab-grid">
+        <section class="device-section" aria-label="Interactive circular display">
+          <div class="device-stage">
+            <div class="stage-heading"><span class="eyebrow">01 / DISPLAY</span><span id="connection-status" class="connection-status" role="status">Connecting to simulator</span></div>
+            <div class="device-assembly">
+              <div class="device-housing">
+                <button id="display" class="display" type="button" aria-label="Simulated touch display" aria-describedby="touch-help keyboard-help">
+                  <img id="frame" width="466" height="466" alt="Loading simulated device screen" draggable="false">
+                  <span class="loading-screen" id="loading-screen"><span class="loading-symbol" aria-hidden="true">H / 02</span>Loading the instrument…</span>
+                  <span class="touch-marker" id="touch-marker" aria-hidden="true"></span>
+                  <span class="hit-regions" id="hit-regions" aria-hidden="true"></span>
+                </button>
+              </div>
+              <button id="boot" class="boot-key" type="button" aria-label="Press BOOT: use the open simulated T3 session"><span>BOOT</span><i aria-hidden="true"></i></button>
+            </div>
+            <div class="stage-footer"><div><span class="stage-label">SCREEN</span><strong id="screen-kind">Starting</strong></div><div><span class="stage-label">PANEL</span><strong id="panel-level">—</strong></div><div><span class="stage-label">SIM CLOCK</span><strong id="clock">00:00</strong></div></div>
+          </div>
+          <div class="touch-caption"><p id="touch-help"><strong>Use the glass.</strong> Tap a control, drag to swipe, or hold the center to talk.</p><label class="switch-label"><input id="show-regions" type="checkbox"><span>Show touch zones</span></label></div>
+          <div class="accessible-controls" aria-label="Device controls" id="device-controls"></div>
+          <details class="keyboard-help"><summary>Keyboard controls<span aria-hidden="true">+</span></summary><div id="keyboard-help"><p>Focus the display. <kbd>←</kbd> <kbd>→</kbd> use the visible previous and next controls. Hold <kbd>Space</kbd> to simulate a center hold. <kbd>Enter</kbd> taps the center. <kbd>B</kbd> presses BOOT. The labeled buttons below the display provide every visible action.</p><p>Holding simulates speech with a fixed sample phrase; it never opens your microphone.</p></div></details>
+        </section>
+
+        <aside class="inspector" aria-label="Simulator controls and current state">
+          <section class="inspector-section scene-section">
+            <div class="section-heading"><h2>02 / SET THE SCENE</h2><button id="reset" class="text-button" type="button" disabled>Reset <span aria-hidden="true">↺</span></button></div>
+            <label class="field-label" for="scenario">Start from a state</label>
+            <div class="select-wrap"><select id="scenario" disabled><option>Loading scenarios…</option></select><span aria-hidden="true">⌄</span></div>
+            <p class="scenario-note" id="scenario-note">The production interface, with synthetic sessions and native input logic.</p>
+            <div class="clock-controls"><button id="advance" type="button" class="secondary-button" disabled><span aria-hidden="true">↗</span> Skip 60 seconds</button><span>Try idle + wake</span></div>
+          </section>
+
+          <section class="inspector-section destination-section">
+            <div class="section-heading"><h2>03 / VOICE DESTINATION</h2><span class="status-led" id="voice-led" aria-hidden="true"></span></div>
+            <p id="destination-project" class="destination-project">NO SESSION SELECTED</p>
+            <h3 id="destination-title">Choose your direction.</h3>
+            <div class="status-row"><span class="status-chip" id="voice-status">Waiting</span><span class="mode-label" id="send-mode">—</span></div>
+            <p id="state-help" class="state-help">Choose a scenario to explore the interface.</p>
+          </section>
+
+          <section class="inspector-section activity-section">
+            <div class="section-heading"><h2>04 / WHAT JUST HAPPENED</h2><span class="event-count" id="submission-count">0 SIM SENDS</span></div>
+            <p class="action-feedback" id="last-action" role="status" aria-live="polite" aria-atomic="true">Waiting for the simulator.</p>
+            <ol class="event-list" id="event-list" aria-label="Recent simulated actions"><li class="event-placeholder">Actions will appear here.</li></ol>
+          </section>
+          <p class="sim-boundary"><span aria-hidden="true">◌</span><span id="simulation-note">Real renderer. Native gesture logic.<br>Simulated hardware and synthetic speech.</span></p>
+        </aside>
+      </div>
+      <p class="connection-error" id="connection-error" role="alert" hidden></p>
+    </main>
+
+    <footer class="site-footer"><span>SHARK HARNESS / DEVICE SIMULATOR</span><span>No USB · No microphone · No live prompts</span><span>BUILT TO BE TOUCHED.</span></footer>
+  </div>
+</body>
+</html>

@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Shark Harness">
+  <rect width="64" height="64" rx="8" fill="#ff5c35"/>
+  <path d="M12 46 40 12 38 38 53 46Z" fill="#222321"/>
+  <circle cx="51" cy="14" r="3" fill="#222321"/>
+</svg>

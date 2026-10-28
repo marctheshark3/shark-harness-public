@@ -1,0 +1,3 @@
+# Optional local voice runtime; models are downloaded separately, never bundled.
+piper-tts==1.8.0
+onnxruntime==1.23.2

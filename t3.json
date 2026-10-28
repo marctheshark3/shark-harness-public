@@ -1,0 +1,10 @@
+{
+  "$schema": "https://t3.codes/schema/t3.json",
+  "scripts": [
+    {"name": "Device: start", "command": "python3 companion.py start", "icon": "play", "runOnWorktreeCreate": false},
+    {"name": "Device: status", "command": "python3 companion.py status", "icon": "debug", "runOnWorktreeCreate": false},
+    {"name": "Device: stop", "command": "python3 companion.py stop", "icon": "configure", "runOnWorktreeCreate": false},
+    {"name": "Device: simulator", "command": ".venv/bin/python -m simulator --port 8876", "icon": "debug", "runOnWorktreeCreate": false},
+    {"name": "Characters: preview", "command": ".venv/bin/python character_preview.py", "icon": "play", "runOnWorktreeCreate": false}
+  ]
+}

@@ -1,0 +1,9 @@
+shark-harness
+Copyright 2026 Marc Mailloux and contributors.
+
+This project is licensed under the Apache License, Version 2.0.
+See LICENSE for the full terms.
+
+Third-party dependencies and separately downloaded models retain their own
+licenses and copyright notices. See docs/dependencies.md for the inventory.
+Firmware distributions include upstream license files under licenses/.

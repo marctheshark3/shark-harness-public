@@ -1,0 +1,411 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="light" />
+    <meta name="theme-color" content="#f1f0eb" />
+    <meta name="description" content="An independent control surface for T3 Code. A round display, local voice, and your work in view." />
+    <title>Shark Harness — Control surface</title>
+    <link
+      rel="icon"
+      href="/icon.svg"
+    />
+    <link rel="stylesheet" href="/styles.css" />
+    <script src="/app.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#display">Skip to controls</a>
+    <div class="shell">
+      <header class="site-header">
+        <a class="brand" href="/" aria-label="Shark harness home">
+          <svg class="brand-mark" viewBox="0 0 40 40" aria-hidden="true">
+            <path d="M8 29 25 8 24 24 33 29Z" />
+          </svg>
+          <span
+            >shark<span class="brand-period">.</span
+            ><small>INDEPENDENT INSTRUMENTS</small></span
+          >
+        </a>
+        <nav class="site-nav" aria-label="Control sections">
+          <a href="#display"><span>01</span> Display</a>
+          <a href="#voice"><span>02</span> Voice</a>
+          <a href="#activity"><span>03</span> Sessions</a>
+        </nav>
+        <div class="connection" role="status">
+          <span id="connection-dot" class="dot"></span
+          ><span id="connection-label">Connecting to T3</span>
+        </div>
+        <button id="setup-open" class="setup-button" type="button" aria-haspopup="dialog">Setup <span aria-hidden="true">↗</span></button>
+      </header>
+      <main>
+        <section class="intro" aria-labelledby="page-title">
+          <div>
+            <p class="eyebrow"><span class="eyebrow-signal" aria-hidden="true"></span> INDEPENDENT INSTRUMENTS / SERIES 001</p>
+            <h1 id="page-title">HARNESS<span>—01</span></h1>
+          </div>
+          <div class="intro-note">
+            <span class="registration" aria-hidden="true">↗</span>
+            <p>Your desk. In the loop.<br /><span>A small surface for the bigger picture.</span></p>
+          </div>
+        </section>
+        <div id="connection-strip" class="connection-strip" role="status">
+          <div><span id="link-state" class="link-state">CONNECTING</span><span id="link-detail">Finding your local T3 workspace…</span></div>
+          <a href="#activity">View sessions <span aria-hidden="true">↓</span></a>
+        </div>
+        <section id="display" class="studio" aria-label="Round display studio">
+          <div class="device-column">
+            <div class="panel-heading">
+              <h2><span class="section-number">01</span> Display monitor</h2>
+              <button id="motion-toggle" class="motion-toggle" type="button" aria-pressed="false" aria-label="Pause animation">Motion on <span aria-hidden="true">Ⅱ</span></button>
+            </div>
+            <div class="display-stage">
+              <span class="stage-corner top-left" aria-hidden="true">+</span
+              ><span class="stage-corner top-right" aria-hidden="true">+</span>
+              <span class="stage-corner bottom-left" aria-hidden="true">+</span
+              ><span class="stage-corner bottom-right" aria-hidden="true"
+                >+</span
+              >
+              <span class="stage-label" aria-hidden="true"
+                >SH—01 / ROUND DISPLAY</span
+              >
+              <div class="device">
+                <div class="bezel">
+                  <canvas
+                    id="screen"
+                    width="466"
+                    height="466"
+                    role="img"
+                    aria-label="T3 companion round display"
+                  ></canvas>
+                </div>
+              </div>
+              <div class="dimension" aria-hidden="true">
+                <span>466 × 466 / AMOLED</span>
+              </div>
+            </div>
+            <div class="device-caption">
+              <span class="monitor-indicator" aria-hidden="true"></span
+              ><span id="mode-label">LIVE DATA · SCREEN SIMULATOR</span
+              ><span id="scene-lifetime" class="caption-end">AMBIENT</span>
+            </div>
+            <p id="accessible-status" class="sr-only" aria-live="polite"></p>
+          </div>
+          <aside class="controls" aria-label="Display controls">
+            <div class="control-section">
+              <div class="control-heading">
+                <h2>Set the atmosphere.</h2>
+                <span>PROGRAM / 01—03</span>
+              </div>
+              <div class="scene-options" role="group" aria-label="Visual style">
+                <button
+                  class="scene-option"
+                  data-scene="shark"
+                  aria-pressed="false"
+                >
+                  <span class="scene-index" aria-hidden="true">01</span>
+                  <svg
+                    class="scene-art"
+                    viewBox="0 0 100 56"
+                    aria-hidden="true"
+                  >
+                    <path d="M15 43 58 8 57 32 84 43Z" />
+                  </svg>
+                  <span class="scene-name"
+                    >Shark
+                    <span class="selection-light" aria-hidden="true"></span
+                  ></span>
+                </button>
+                <button
+                  class="scene-option"
+                  data-scene="orbit"
+                  aria-pressed="false"
+                >
+                  <span class="scene-index" aria-hidden="true">02</span>
+                  <svg
+                    class="scene-art orbit-art"
+                    viewBox="0 0 100 56"
+                    aria-hidden="true"
+                  >
+                    <circle cx="50" cy="28" r="7" />
+                    <ellipse
+                      cx="50"
+                      cy="28"
+                      rx="36"
+                      ry="14"
+                      transform="rotate(-30 50 28)"
+                    />
+                    <ellipse
+                      cx="50"
+                      cy="28"
+                      rx="36"
+                      ry="14"
+                      transform="rotate(30 50 28)"
+                    />
+                  </svg>
+                  <span class="scene-name"
+                    >Orbit
+                    <span class="selection-light" aria-hidden="true"></span
+                  ></span>
+                </button>
+                <button
+                  class="scene-option active"
+                  data-scene="aurora"
+                  aria-pressed="true"
+                >
+                  <span class="scene-index" aria-hidden="true">03</span>
+                  <svg
+                    class="scene-art aurora-art"
+                    viewBox="0 0 100 56"
+                    aria-hidden="true"
+                  >
+                    <path
+                      d="M6 20C25-10 34 50 52 20S78 50 94 20M6 28C25-2 34 58 52 28S78 58 94 28M6 36C25 6 34 66 52 36S78 66 94 36"
+                    />
+                  </svg>
+                  <span class="scene-name"
+                    >Aurora
+                    <span class="selection-light" aria-hidden="true"></span
+                  ></span>
+                </button>
+              </div>
+              <p class="control-note">
+                Choose a program. The animation previews here in your browser.
+              </p>
+            </div>
+            <div class="control-section status-section">
+              <div class="control-heading">
+                <h2>Explore the signal</h2>
+                <span>BROWSER PREVIEW</span>
+              </div>
+              <div class="moments" role="group" aria-label="Preview state">
+                <button
+                  data-state="live"
+                  class="moment active"
+                  aria-pressed="true"
+                >
+                  <span class="moment-icon" aria-hidden="true">◉</span><span id="live-state-label">Live T3</span>
+                </button>
+                <button
+                  data-state="working"
+                  class="moment"
+                  aria-pressed="false"
+                >
+                  <span class="moment-icon" aria-hidden="true">↗</span>Working
+                </button>
+                <button
+                  data-state="waiting"
+                  class="moment"
+                  aria-pressed="false"
+                >
+                  <span class="moment-icon" aria-hidden="true">◇</span>Waiting
+                </button>
+                <button data-state="done" class="moment" aria-pressed="false">
+                  <span class="moment-icon" aria-hidden="true">✓</span>Done
+                </button>
+                <button data-state="idle" class="moment" aria-pressed="false">
+                  <span class="moment-icon" aria-hidden="true">—</span>Idle
+                </button>
+              </div>
+            </div>
+            <div class="control-section visual-section">
+              <div class="control-heading">
+                <h2>Make it yours.</h2>
+                <span>IMAGE / DATA</span>
+              </div>
+              <div class="visual-actions">
+                <div class="upload-control">
+                  <input
+                    id="image-file"
+                    type="file"
+                    accept="image/png,image/jpeg,image/webp"
+                    aria-label="Choose an image"
+                  /><label class="upload-button" for="image-file"
+                    ><span aria-hidden="true">↗</span> Choose an image</label
+                  >
+                </div>
+                <button id="chart-button" type="button">
+                  <span aria-hidden="true">▥</span> Try a chart
+                </button>
+              </div>
+              <p class="control-note">
+                PNG, JPG, WEBP / 256 KiB max / 466 × 466 ideal
+              </p>
+            </div>
+            <div class="control-section message-section">
+              <div class="control-heading">
+                <label for="message">A thought on display</label><span id="message-count">0 / 60</span>
+              </div>
+              <form id="message-form">
+                <div class="message-input">
+                  <input
+                    id="message"
+                    name="message"
+                    maxlength="60"
+                    placeholder="Put a thought on display…"
+                    required
+                  /><button
+                    type="submit"
+                    aria-label="Show message on simulator" id="message-submit"
+                  >
+                    ↗
+                  </button>
+                </div>
+                <p id="message-feedback" class="feedback" aria-live="polite">
+                  Shown for 20 seconds. Forwarded to your device when its sender is running.
+                </p>
+              </form>
+              <button id="clear-button" class="clear-button" type="button">
+                <span aria-hidden="true">↶</span> Return to ambient
+              </button>
+            </div>
+          </aside>
+        </section>
+        <section id="voice" class="voice-panel" aria-labelledby="voice-title">
+          <div class="panel-heading">
+            <h2 id="voice-title">
+              <span class="section-number">02</span> Voice interface
+            </h2>
+            <span class="panel-code">MIC IN / SPEAKER OUT</span>
+          </div>
+          <div class="voice-route">
+            <div><span class="route-label">VOICE DESTINATION</span><strong id="voice-target">No session selected</strong></div>
+            <span id="voice-readiness" class="route-state">Checking device…</span>
+          </div>
+          <div class="voice-grid">
+            <div class="listen-section">
+              <div class="control-heading">
+                <h3>
+                  Think out loud.<span class="direction-mark" aria-hidden="true"
+                    >↗</span
+                  >
+                </h3>
+                <span>INPUT</span>
+              </div>
+              <label class="field-label" for="listen-session"
+                >Destination session</label
+              >
+              <select id="listen-session">
+                <option value="">Choose a T3 session…</option>
+              </select>
+              <div class="voice-actions listen-actions">
+                <button id="listen-enable" type="button">
+                  Enable voice input</button
+                ><button id="listen-record" type="button" disabled>
+                  Record</button
+                ><button id="listen-stop" type="button" disabled>Finish</button>
+              </div>
+              <p class="listen-hint" id="listen-mode">
+                Hold the glass until the ring turns pink. Speak, then release.
+                Keep holding while you gather your thoughts.
+              </p>
+              <p id="listen-feedback" class="feedback" aria-live="polite">
+                Connect the device to begin.
+              </p>
+              <form id="listen-review" hidden>
+                <label class="field-label" for="listen-text"
+                  >Review your prompt</label
+                ><textarea
+                  id="listen-text"
+                  rows="4"
+                  maxlength="20000"
+                  required
+                ></textarea>
+                <p id="listen-destination" class="listen-hint"></p>
+                <div class="voice-actions">
+                  <button id="listen-send" type="submit">
+                    Confirm &amp; send to T3</button
+                  ><button id="listen-discard" type="button">Discard</button>
+                </div>
+              </form>
+              <p class="privacy-note">
+                Audio stays on this computer. Your words go to the selected T3 session.
+              </p>
+            </div>
+            <div class="voice-section">
+              <div class="control-heading">
+                <h3>
+                  Let it speak.<span class="direction-mark" aria-hidden="true"
+                    >↘</span
+                  >
+                </h3>
+                <span>OUTPUT</span>
+              </div>
+              <form id="speech-form">
+                <label class="field-label" for="speech-text"
+                  >Message to speak</label
+                >
+                <div class="message-input">
+                  <input
+                    id="speech-text"
+                    maxlength="400"
+                    placeholder="Say something out loud…"
+                    required
+                  /><button type="submit" aria-label="Speak on device">
+                    ▷
+                  </button>
+                </div>
+              </form>
+              <div class="voice-actions volume-control">
+                <label for="speech-volume">LEVEL</label>
+                <div class="volume-track">
+                  <input
+                    id="speech-volume"
+                    type="range"
+                    min="0"
+                    max="80"
+                    value="60"
+                  />
+                </div>
+                <output id="volume-value" for="speech-volume">60</output
+                ><button id="speech-stop" type="button">Stop</button>
+              </div>
+              <p id="speech-feedback" class="feedback" aria-live="polite">
+                Local voice · plays on your device.
+              </p>
+              <div class="speaker-grille" aria-hidden="true"></div>
+              <p class="privacy-note">
+                LOCAL SYNTHESIS / TAP THE DISPLAY TO STOP
+              </p>
+            </div>
+          </div>
+        </section>
+        <section
+          id="activity"
+          class="activity"
+          aria-labelledby="activity-title"
+        >
+          <div class="panel-heading">
+            <h2 id="activity-title">
+              <span class="section-number">03</span> Your work, in view.
+            </h2>
+            <span id="thread-count" class="panel-code">Reading T3…</span>
+          </div>
+          <div class="activity-toolbar">
+            <div class="activity-summary"><span><b id="count-working">0</b> working</span><span><b id="count-waiting">0</b> need you</span><span><b id="count-done">0</b> done</span></div>
+            <label class="session-search"><span class="sr-only">Find a session</span><span aria-hidden="true">⌕</span><input id="session-search" type="search" placeholder="Find a session…" autocomplete="off" /></label>
+          </div>
+          <div id="thread-list" class="thread-list"></div>
+          <p id="session-feedback" class="sr-only" aria-live="polite"></p>
+        </section>
+      </main>
+      <footer>
+        <span><b>SHARK HARNESS</b> / IDEAS INTO SIGNAL.</span
+        ><span
+          >INDEPENDENT T3 COMPANION <span class="footer-dot">●</span> MADE TO BE MADE YOURS.</span
+        >
+      </footer>
+    </div>
+    <dialog id="setup-dialog" aria-labelledby="setup-title">
+      <div class="dialog-heading"><span class="eyebrow">SH—01 / GET CONNECTED</span><button id="setup-close" type="button" aria-label="Close setup guide">×</button></div>
+      <h2 id="setup-title">A little setup.<br />A lot of possibility.</h2>
+      <p class="dialog-intro">The browser canvas works on its own. Add T3 for live sessions, then a device for voice.</p>
+      <ol class="setup-steps">
+        <li><h3>Explore the surface</h3><p>Try an ambient program, a chart, or a message. For sample sessions without connecting T3, run:</p><code>python3 bridge.py --demo</code></li>
+        <li><h3>Bring your sessions in</h3><p>Start T3 Code on this computer. Run the bridge without demo mode, then refresh this page:</p><code>python3 bridge.py</code><p class="setup-fine-print">Custom database? Add <code>--database /path/to/state.sqlite</code>. The bridge reads session status without changing the database.</p></li>
+        <li><h3>Give your desk a voice</h3><p>Connect the supported round display and follow the repository’s device and voice setup. Once the companion is running, choose a session under Voice and enable input.</p><p class="setup-fine-print">The microphone is on the device. Hold its glass to talk. The voice panel shows whether release sends immediately or opens a review.</p></li>
+      </ol>
+      <a class="guide-link" href="https://github.com/marctheshark3/shark-harness#readme" target="_blank" rel="noreferrer">Open the full setup guide <span aria-hidden="true">↗</span></a>
+    </dialog>
+  </body>
+</html>
